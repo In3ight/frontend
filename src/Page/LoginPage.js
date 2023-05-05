@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Auth from "./Auth";
 const Div = styled.div`
   display: flex;
   flex-direction: column;
@@ -178,6 +179,10 @@ const H4 = styled.h4`
   margin-top: 0px;
 `;
 const LoginPage = () => {
+  const REST_API_KEY = "089967149185843522d3d4b4ae9a3b3d";
+  const REDIRECT_URI = "http://localhost:3000/oauth/kakao/callback";
+  const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`;
+
   return (
     <Div>
       <StyledHead>
@@ -225,7 +230,9 @@ const LoginPage = () => {
                   <ProductBtn>휴대폰 사진</ProductBtn>휴대폰
                 </div>
               </div>
-              <KakaBtn>카카오로 회원가입</KakaBtn>
+              <KakaBtn>
+                <a href={KAKAO_AUTH_URL}>카카오로 회원가입</a>
+              </KakaBtn>
               <SignBtn>회원가입</SignBtn>
 
               <AdverBtn>광고자리</AdverBtn>
