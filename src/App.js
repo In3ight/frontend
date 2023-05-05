@@ -6,6 +6,7 @@ import KakaoLogin from "./Page/KaKaoLogin";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Auth from "./Page/Auth";
 import Profile from "./Page/Profile";
+import FindPw from "./Page/FindPw";
 function App() {
   const [hello, setHello] = useState("");
 
@@ -23,6 +24,7 @@ function App() {
           <Route path="/" element={<LoginPage />}></Route>
           <Route path="/oauth/kakao/callback" element={<Auth />}></Route>
           <Route path="/profile" element={<Profile />}></Route>
+          <Route path="/findPw" element={<FindPw />}></Route>
           {/* 백엔oginPag드에서 가져온 데이터입니다: {hello} */}
           {/*  */}
         </Routes>

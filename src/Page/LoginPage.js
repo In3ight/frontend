@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Auth from "./Auth";
+import { useNavigate } from "react-router-dom";
 const Div = styled.div`
   display: flex;
   flex-direction: column;
@@ -183,6 +184,8 @@ const LoginPage = () => {
   const REDIRECT_URI = "http://localhost:3000/oauth/kakao/callback";
   const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`;
 
+  const navigate = useNavigate();
+
   return (
     <Div>
       <StyledHead>
@@ -213,7 +216,9 @@ const LoginPage = () => {
                 </div>
                 <div>
                   <FindBtn>이메일 찾기</FindBtn>|
-                  <FindBtn>비밀번호 찾기</FindBtn>
+                  <FindBtn onClick={() => navigate("/findPw")}>
+                    비밀번호 찾기
+                  </FindBtn>
                 </div>
               </div>
               <div>
