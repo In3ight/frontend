@@ -3,9 +3,9 @@ import axios from "axios";
 import qs from "qs";
 import { useNavigate } from "react-router-dom";
 const Auth = () => {
-  const REST_API_KEY = "089967149185843522d3d4b4ae9a3b3d";
+  const REST_API_KEY = process.env.REST_API_KEY;
   const REDIRECT_URI = "http://localhost:3000/oauth/kakao/callback";
-  const CLIENT_SECRET = "8JYaZi8uZvnr46M3DaB2YeLeCdA6JpTN";
+  const CLIENT_SECRET = process.env.CLIENT_SECRET;
 
   const code = new URL(window.location.href).searchParams.get("code");
   const navigate = useNavigate();
