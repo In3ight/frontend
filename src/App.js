@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Auth from "./Page/Auth";
 import Profile from "./Page/Profile";
 import FindPw from "./Page/FindPw";
+import MainPage from "./Page/MainPage";
 function App() {
   const [hello, setHello] = useState("");
 
@@ -21,7 +22,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<LoginPage />}></Route>
+          <Route path="/" element={<MainPage />}></Route>
           <Route path="/oauth/kakao/callback" element={<Auth />}></Route>
           <Route path="/profile" element={<Profile />}></Route>
           <Route path="/findPw" element={<FindPw />}></Route>
