@@ -1,16 +1,20 @@
-import { useState } from "react";
-import ReactDatePicker from "react-datepicker";
 import styled from "styled-components";
-import "react-datepicker/dist/react-datepicker.css";
 const Div = styled.div`
-  background-image: url(${"/Image/carrier.png"});
-  background-repeat: no-repeat;
-  background-size: cover; /* 이미지를 화면에 꽉 채우도록 설정할 수 있습니다. */
-  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`;
+const Main1 = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
+  background-image: url(/Image/carrier.png);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  width: 1920px;
+  height: 1080px;
 `;
 const Head = styled.div`
   display: flex;
@@ -27,7 +31,7 @@ const Center = styled.div`
   align-items: center;
 `;
 const Title = styled.div`
-  width: 800px;
+  width: 750px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -37,7 +41,8 @@ const Title = styled.div`
 const Logo = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  width: 210px;
 `;
 const User = styled.div`
   display: flex;
@@ -56,12 +61,6 @@ const User = styled.div`
     margin-left: 10px;
   }
 `;
-const Main = styled.div`
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-`;
 const Name = styled.div`
   display: flex;
   flex-direction: column;
@@ -75,98 +74,46 @@ const Name = styled.div`
     color: #494949;
   }
 `;
-const Bottom = styled.footer`
-  height: 500px;
-  background-color: #f6f6f6;
-  width: 1600px;
-  border-radius: 20px 20px 0px 0px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
-const Cen = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 1000px;
+const Box = styled.div``;
+const Main2 = styled.div``;
+const Main3 = styled.div``;
 
-  align-items: stretch;
-`;
-const Row1 = styled.div`
-  display: flex;
-  justify-content: space-between;
-`;
+const Main4 = styled.div``;
 const MainPage = () => {
-  const [startDate, setStartDate] = useState(new Date());
-  const [endDate, setEndDate] = useState(new Date());
   return (
     <Div>
-      <Head>
-        <Center>
-          <Title>
-            <Logo>
-              <img src="Image/logo.png" alt="logo" />
-              <img src="Image/suit-carrier.png" alt="suit-carrier" />
-            </Logo>
-            <div>인기매물 확인</div>
-            <div>매물 등록하기</div>
-            <div>CONTACT_US</div>
-          </Title>
-          <User>
-            <button>Sign Up</button>
-            <div>
-              <img src="Image/alarm.png" />
-              <img src="Image/user.png" />
-            </div>
-          </User>
-        </Center>
-      </Head>
-      <Main>
+      <Main1>
+        <Head>
+          <Center>
+            <Title>
+              <Logo>
+                <img src="Image/logo.png" alt="logo" />
+                <img src="Image/suit-carrier.png" alt="suit-carrier" />
+              </Logo>
+              <div>인기매물 확인</div>
+              <div>매물 등록하기</div>
+              <div>CONTACT_US</div>
+            </Title>
+            <User>
+              <button>Sign Up</button>
+              <div>
+                <img src="Image/alarm.png" />
+                <img src="Image/user.png" />
+              </div>
+            </User>
+          </Center>
+        </Head>
         <Name>
           <h1>Suit-carrier</h1>
           <h4>
             사기는 아깝지만 여행에 꼭 필요한 캐리어, 이제는 대여로 해결하세요
           </h4>
         </Name>
-        <Bottom>
-          <Cen>
-            <Row1>
-              <div>
-                <div>
-                  <img src="Image/place.png" />
-                  <h3>동네 선택</h3>
-                </div>
-                <select>
-                  <option>서울시</option>
-                </select>
-              </div>
-              <div>
-                <h3>대여 기간</h3>
-                <div>
-                  <ReactDatePicker
-                    selected={startDate}
-                    onChange={(date) => setStartDate(date)}
-                    selectsStart
-                    startDate={startDate}
-                    endDate={endDate}
-                  />
-                  <ReactDatePicker
-                    selected={endDate}
-                    onChange={(date) => setEndDate(date)}
-                    selectsEnd
-                    startDate={startDate}
-                    endDate={endDate}
-                    minDate={startDate}
-                  />
-                </div>
-              </div>
-            </Row1>
-            <div></div>
-          </Cen>
-        </Bottom>
-      </Main>
+        <Box></Box>
+      </Main1>
+      <Main2></Main2>
+      <Main3></Main3>
+      <Main4></Main4>
     </Div>
   );
 };

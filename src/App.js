@@ -22,7 +22,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<MainPage />}></Route>
+          <Route path="/" element={<LoginPage />}></Route>
           <Route path="/oauth/kakao/callback" element={<Auth />}></Route>
           <Route path="/profile" element={<Profile />}></Route>
           <Route path="/findPw" element={<FindPw />}></Route>
