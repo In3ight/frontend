@@ -1,5 +1,9 @@
 import styled from "styled-components";
-import { ReactComponent as Success } from "../../assets/img/memberSuccess.svg";
+import Button from '@mui/material/Button';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
+import { useState } from "react";
+import AgreeTerms from "./AgreeTerms";
 
 const Div = styled.div`
   display: flex;
@@ -109,6 +113,7 @@ const Box = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 49px;
+  //margin-bottom: 116px;
 
   border-radius: 30px;
   border: 1px solid #b5b5b5;
@@ -118,26 +123,65 @@ const Box = styled.div`
 const Content = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  //align-items: center;
+  align-items: flex-start;
   }
 `;
 
-const Icon=styled.div`
-  width: 175px;
-  height: 175px;
-  margin-top: 124px;
+const SubTitle = styled.div`
+  width: 150px;
+  height: 68px;
+  display: flex;
+  justify-content: space-between;
+
+  color: #4F4747;
+  font-size: 16px;
+  font-weight: bold;
 `;
 
 const Div1 = styled.div`
   display: flex;
-  align-items: center;
-  height: 68px;
+  align-items: flex-start;
+  width: 525px;
 
-  font-weight: bold;
-  font-size: 24px;
+  line-height: 140%;
+  font-weight: medium;
+  font-size: 13px;
+  font-color: #1D1D1D;
 `;
 
-const MemberSuccess = () => {
+const Div2 = styled(Div)`
+  width: 116px;
+  height: 58px;
+  margin-top: 12px;
+  margin-left: 490px;
+
+  & > button {
+    width: 116px; 
+    height: 58px;
+    border-radius: 30px;
+    border: none;
+    background-color: #E1E1E1;
+    //background-color: $(props=>props.bg);
+   // background-color: { Next==true ? ${(props)=> props.bg='#007B59'} : ${(props)=>props.bg='#1D1D1D'}};
+    
+    font-weight: Bold;
+    font-size: 23px; 
+    color: white;
+    
+  }
+`;
+
+const MemberAgree = (props) => {
+
+  // 체크되었을 때(=true)일 때 Next를 true로 바꿔라(=bg color=녹색)
+
+  const [Next,setNext]=useState(false);
+  const [checked, setChecked] = useState(false);
+
+  // const handleChange = (event) => {()=>
+  //   setChecked(true, event.target.checked);
+  // };
 
   return (
 
@@ -150,16 +194,16 @@ const MemberSuccess = () => {
             <Hr/>
             <Circle></Circle>
             <Hrmid/>
-            <Circle></Circle>
-            <Hr/>
             <ActiveCircle></ActiveCircle>
+            <Hr/>
+            <Circle></Circle>
         </NavDiv>
 
         <SubDiv>
             <SubText>본인인증</SubText>
             <SubText style={{marginLeft:'40px',marginRight:'111px'}}>정보입력</SubText>
-            <SubText style={{marginLeft:'80px'}}>약관동의</SubText>
-            <ActivesubText style={{marginLeft:'40px'}}>가입완료</ActivesubText>
+            <ActivesubText style={{marginLeft:'80px'}}>약관동의</ActivesubText>
+            <SubText style={{marginLeft:'40px'}}>가입완료</SubText>
         </SubDiv>
 
         <Title2>
@@ -167,14 +211,36 @@ const MemberSuccess = () => {
           <div style={{fontSize:'20px', color:'#939393'}}>*입력하신 정보는 회원가입 여부에만 사용되며 저장되지 않습니다.</div>
         </Title2>
 
-        <Content>
-          <Icon><Success/></Icon>
-          <Div1>가입이 완료되었습니다.</Div1>     
-        </Content>
-        
+        {/* 체크되었을 때(=true)일 때 Next를 true로 바꿔라(=bg color=녹색) */}
+
+        <Box>
+          <Content>
+            <SubTitle> 
+              <FormControlLabel
+                value="start"
+                control={<Checkbox color= "success"/>}
+                label="약관동의하기"
+                labelPlacement="start"
+                // onChange={handleChange}
+                />
+              </SubTitle>
+
+            <Div1>{AgreeTerms}</Div1>    
+              
+          </Content>
+        </Box>
+        {/* { checked==true ? setNext(true) : setNext(false)} */}
+        {/* { Next==true ? props.bg='#007B59' :  props.bg='#1D1D1D'} */}
+        <Div2>
+          <button variant="contained" bg="#1D1D1D">
+          {/* // style={{width:'116px', height:'58px', marginTop:'12px', marginLeft:'490px', background: 'blue',fontweight:'Bold', fontSize:'23px', borderRadius:'30px'}} disabled */}
+            다음단계</button>
+        </Div2>
+
+
       </Center>
     </Div>
   );
 };
 
-export default MemberSuccess;
+export default MemberAgree;

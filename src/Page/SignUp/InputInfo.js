@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Button from '@mui/material/Button';
+import React from "react";
 
 const Div = styled.div`
   display: flex;
@@ -226,6 +227,28 @@ const Div4 = styled.div`
 `;
 
 const InputInfo = () => {
+
+  const [useremail, setUseremail ]= React.useState("");
+  const [userpw, setUserpw ]= React.useState("");
+  //const [user]
+
+  //email, 비밀번호 정규식  
+  const emailRegEx = /^[A-Za-z0-9]([-_.]?[A-Za-z0-9])*@[A-Za-z0-9]([-_.]?[A-Za-z0-9])*\.[A-Za-z]{2,3}$/i;
+  const pwRegEx = /^[A-Za-z0-9]{8,20}$/
+
+  const emailChk = (useremail) => {
+    return emailRegEx.test(useremail);
+  }
+  const pwChk=(userpw) => {
+    if(userpw.match(pwRegEx)===null){
+      alert('비밀번호 형식을 확인해주세요.')
+      console.log('비밀번호 형식 화긴');
+      return;
+    } else{
+      console.log('형식이 맞아요')
+    }
+  }
+
   return (
     <Div>
       <Center>
@@ -257,11 +280,15 @@ const InputInfo = () => {
           <Content>
               <Div1 > 
                <p>아이디</p>
-               <input placeholder="이메일"></input>
+               <input 
+               _onchange={(e)=>{setUseremail(e.target.value); emailChk(e.target.value)}}
+               placeholder="이메일" type="email"></input>
               </Div1>    
               <Div2 >
                 <p>비밀번호</p>
-                <input placeholder="비밀번호"></input>
+                <input 
+                _onchange={(e)=>{setUserpw(e.target.value); pwChk(e.target.value)}}
+                placeholder="영문 대소문자, 숫자를 혼합해 8자 이상 입력" type="password"></input>
               </Div2>
               <Div3>
                 <p>거주지역</p>
