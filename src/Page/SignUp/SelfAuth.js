@@ -203,6 +203,10 @@ const Div3 = styled.div`
   }
 `;
 
+const Link=styled.div`
+
+`;
+
 const SelfAuth = () => {
   return (
     <Div>
@@ -210,9 +214,9 @@ const SelfAuth = () => {
         <Title1>회원가입</Title1>
 
         <NavDiv>
-            <Circle></Circle>
-            <Hr/>
             <ActiveCircle></ActiveCircle>
+            <Hr/>
+            <Circle></Circle>
             <Hrmid/>
             <Circle></Circle>
             <Hr/>
@@ -220,8 +224,8 @@ const SelfAuth = () => {
         </NavDiv>
 
         <SubDiv>
-            <SubText>본인인증</SubText>
-            <ActivesubText style={{marginLeft:'40px',marginRight:'111px'}}>정보입력</ActivesubText>
+            <ActivesubText>본인인증</ActivesubText>
+            <SubText style={{marginLeft:'40px',marginRight:'111px'}}>정보입력</SubText>
             <SubText style={{marginLeft:'80px'}}>약관동의</SubText>
             <SubText style={{marginLeft:'40px'}}>가입완료</SubText>
         </SubDiv>
@@ -243,7 +247,9 @@ const SelfAuth = () => {
               </Div2>
               <Div3 >
                 <p>본인인증하러가기</p>
-                <Button variant="contained" style={{width:"96px", height:"37px", backgroundColor:'#007B59'}}>본인인증</Button>
+                <Button variant="contained" style={{width:"96px", height:"37px", backgroundColor:'#007B59'}}>
+                  <Link to="./PhoneAuth">본인인증</Link>
+                </Button>
               </Div3>
           </Content>
         </Box>
