@@ -22,10 +22,11 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<LoginPage />}></Route>
+          <Route path="/" element={<MainPage />}></Route>
           <Route path="/oauth/kakao/callback" element={<Auth />}></Route>
           <Route path="/profile" element={<Profile />}></Route>
           <Route path="/findPw" element={<FindPw />}></Route>
+          <Route path="/login" element={<LoginPage />}></Route>
           {/* 백엔oginPag드에서 가져온 데이터입니다: {hello} */}
           {/*  */}
         </Routes>
