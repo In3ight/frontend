@@ -3,6 +3,7 @@ import { AiOutlineRight } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 import Bottom from "../Components/bottom";
 import Cards from "../Components/cards";
+import { left } from "@popperjs/core";
 
 const Div = styled.div`
   display: flex;
@@ -80,7 +81,33 @@ const Name = styled.div`
     color: #494949;
   }
 `;
-const Box = styled.div``;
+const Box = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 1585px;
+  height: 654px;
+  background-color: rgba(222, 222, 222, 0.71);
+  margin-top: 110px;
+`;
+const Div3 = styled.div`
+  width: 1200px;
+  margin-top: 70px;
+  display: flex;
+  justify-content: space-between;
+`;
+const Div4 = styled.div`
+  text-align: left;
+  font-size: 24px;
+`;
+const Select = styled.select`
+  background-color: rgba(222, 222, 222, 0.71);
+  width: 315px;
+  height: 38px;
+  border: 1px solid #000000;
+  margin-top: 5px;
+
+  border-radius: 30px;
+`;
 const Main2 = styled.div`
   display: flex;
   flex-direction: column;
@@ -218,7 +245,25 @@ const MainPage = () => {
             사기는 아깝지만 여행에 꼭 필요한 캐리어, 이제는 대여로 해결하세요
           </h4>
         </Name>
-        <Box></Box>
+        <Box>
+          <Div3>
+            <div style={{ display: "flex" }}>
+              <img
+                src="Image/place.png"
+                style={{ width: "32px", height: "32px" }}
+              />
+              <Div4>
+                동네 선택
+                <br />
+                <Select>
+                  <option>성남시 이매동</option>
+                  <option>용인시 역북동</option>
+                </Select>
+              </Div4>
+            </div>
+            <Div4>대여 기간</Div4>
+          </Div3>
+        </Box>
       </Main1>
       <Main2>
         <Bell>
