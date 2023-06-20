@@ -3,7 +3,6 @@ import { AiOutlineRight } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 import Bottom from "../Components/bottom";
 import Cards from "../Components/cards";
-import { left } from "@popperjs/core";
 
 const Div = styled.div`
   display: flex;
@@ -82,15 +81,28 @@ const Name = styled.div`
   }
 `;
 const Box = styled.div`
+  font-weight: bold;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   width: 1585px;
   height: 654px;
   background-color: rgba(222, 222, 222, 0.71);
   margin-top: 110px;
+  & > button {
+    width: 246px;
+    height: 68px;
+    border-radius: 30px;
+    background-color: #007b59;
+    color: white;
+    border: none;
+    font-size: 16px;
+    margin-top: 77px;
+    margin-left: 1200px;
+  }
 `;
 const Div3 = styled.div`
-  width: 1200px;
+  width: 1000px;
   margin-top: 70px;
   display: flex;
   justify-content: space-between;
@@ -99,14 +111,33 @@ const Div4 = styled.div`
   text-align: left;
   font-size: 24px;
 `;
+const Div5 = styled.div`
+  display: flex;
+  font-size: 24px;
+  font-weight: bold;
+  width: 1100px;
+  justify-content: space-between;
+  margin-top: 112px;
+`;
 const Select = styled.select`
   background-color: rgba(222, 222, 222, 0.71);
   width: 315px;
   height: 38px;
   border: 1px solid #000000;
   margin-top: 5px;
-
   border-radius: 30px;
+  font-weight: bold;
+  font-size: 16px;
+`;
+const Select2 = styled.select`
+  height: 33px;
+  background-color: rgba(222, 222, 222, 0.71);
+  border: none;
+  border-bottom: 1px solid black;
+  font-size: 24px;
+  font-weight: bold;
+  width: 150%;
+  margin-top: 30px;
 `;
 const Main2 = styled.div`
   display: flex;
@@ -212,6 +243,7 @@ const Main4 = styled.div`
 `;
 const MainPage = () => {
   const navigate = useNavigate();
+
   return (
     <Div>
       <Main1>
@@ -261,8 +293,56 @@ const MainPage = () => {
                 </Select>
               </Div4>
             </div>
-            <Div4>대여 기간</Div4>
+            <Div4>
+              대여 기간
+              <div></div>
+            </Div4>
           </Div3>
+          <Div5>
+            <div>
+              색상
+              <br />
+              <Select2>
+                <option>빨간색</option>
+                <option>주황색</option>
+                <option>노란색</option>
+                <option>초록색</option>
+                <option>파란색</option>
+                <option>남색</option>
+                <option>보라색</option>
+              </Select2>
+            </div>
+            <div>
+              사이즈
+              <br />
+              <Select2>
+                <option>18인치</option>
+                <option>20인치</option>
+                <option>24인치</option>
+                <option>27인치</option>
+              </Select2>
+            </div>
+            <div>
+              예산
+              <br />
+              <Select2>
+                <option>10만원 이내</option>
+                <option>20민원 이내</option>
+                <option>30만원 이내</option>
+              </Select2>
+            </div>
+            <div>
+              브랜드
+              <br />
+              <Select2>
+                <option>Samsonite</option>
+                <option>리모와</option>
+                <option>투미</option>
+                <option>샤오미</option>
+              </Select2>
+            </div>
+          </Div5>
+          <button>매물 확인하기</button>
         </Box>
       </Main1>
       <Main2>
