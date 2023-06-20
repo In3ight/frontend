@@ -2,6 +2,8 @@ import styled from "styled-components";
 import { AiOutlineRight } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 import Bottom from "../Components/bottom";
+import Cards from "../Components/cards";
+
 const Div = styled.div`
   display: flex;
   justify-content: center;
@@ -167,11 +169,12 @@ const Txt = styled.div`
     display: flex;
     font-size: 32px;
   }
-  & > button {
-  }
 `;
 const Items = styled.div`
-  height: 316px;
+  /* height: 316px; */
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 `;
 const Main4 = styled.div`
   display: flex;
@@ -314,7 +317,33 @@ const MainPage = () => {
             </button>
           </div>
         </Txt>
-        <Items></Items>
+        <Items>
+          <Cards />
+          <Cards />
+          <Cards />
+          <Cards />
+          <Cards />
+        </Items>
+        <h2
+          style={{
+            color: "#3E4659",
+            marginRight: "10px",
+            fontSize: "45px",
+            fontWeight: "bold",
+            width: "1600px",
+            textAlign: "start",
+            marginTop: "60px",
+          }}
+        >
+          SUIT-CARRER가 추천해요
+        </h2>
+        <Items>
+          <Cards />
+          <Cards />
+          <Cards />
+          <Cards />
+          <Cards />
+        </Items>
       </Main3>
       <Main4>
         <Bottom />
