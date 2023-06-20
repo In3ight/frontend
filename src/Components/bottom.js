@@ -10,7 +10,7 @@ const SubTitle = styled.h2`
   color: white;
 `;
 const Div3 = styled.div`
-  padding-top: 144px;
+  padding: 144px;
   padding-left: 50px;
   display: flex;
   justify-content: space-between;
@@ -39,23 +39,43 @@ const LookBtn = styled.button`
   color: white;
 `;
 const Bottom2 = styled.div`
+  display: flex;
   background-color: #eae9e4;
   height: 380px;
   width: 1920px;
   padding-left: 42px;
 `;
 const Div4 = styled.div`
-  width: ${(props) => props.width};
   display: flex;
-  justify-content: space-between;
-`;
-const H3 = styled.h3`
+  flex-direction: column;
+  text-align: left;
   font-size: 24px;
-  font-weight: ${(props) => props.fontWeight};
+  font-weight: bold;
+  width: 80%;
+  white-space: nowrap;
+  overflow: visible;
+  text-overflow: ellipsis;
 `;
-const H4 = styled.h4`
-  font-size: 20px;
-  margin-top: 0px;
+const Div5 = styled.div`
+  margin-left: 10px;
+  margin-right: 86px;
+`;
+const Div6 = styled.div`
+  font-size: 28px;
+  align-items: end;
+  justify-content: end;
+  margin-right: 68px;
+  margin-bottom: 75px;
+  width: 40%;
+  display: flex;
+  text-align: right;
+  white-space: nowrap;
+  overflow: visible;
+  text-overflow: ellipsis;
+  & > img {
+    width: 204px;
+    height: 204px;
+  }
 `;
 const Bottom = () => {
   return (
@@ -104,16 +124,37 @@ const Bottom = () => {
         </div>
       </Bottom1>
       <Bottom2>
-        <Div4 width="70%">
-          <H3 fontWeight="bold">Contact Us</H3>
-          <H3 fontWeight="bold">gogoogle13@gamil.com</H3>
-          <H3 fontWeight="normal">서울시 관악구 봉천동 100-3 (캐리어빌딩)</H3>
+        <Div4>
+          <h2>Contact Us</h2>
+          gogoogle13@gmail.com
+          <div
+            style={{ display: "flex", marginTop: "20px", marginBottom: "35px" }}
+          >
+            Tel |
+            <Div5 style={{ lineHeight: "170%" }}>
+              010-1234-5678
+              <br />
+              02-1234-5678
+            </Div5>
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              <div style={{ display: "flex", marginBottom: "14px" }}>
+                Fax |<Div5>010-1234-5678</Div5>
+              </div>
+              <div style={{ display: "flex" }}>
+                Lns |<Div5>@suit_carrier0703</Div5>
+              </div>
+            </div>
+            서울시 관악구 봉천동 100-3 (캐리어 빌딩)
+          </div>
+          E-mail | suitcarrier_@naver.com
         </Div4>
-        <Div4 width="30%">
-          <H4>Tel | 010-1234-5678</H4>
-          <H4>Tel | 010-1234-5678</H4>
-        </Div4>
-        <H4>E-mail | suitcarrier_@naver.com</H4>
+        <Div6>
+          <div style={{ marginRight: "27px" }}>
+            <h2>SUIT-CARRIER</h2>
+            우리 집 창고 속 캐리어를, 우리 동네 캐리어로 !
+          </div>
+          <img src="Image/logo.png" alt="로고" />
+        </Div6>
       </Bottom2>
     </div>
   );

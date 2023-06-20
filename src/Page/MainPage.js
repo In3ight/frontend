@@ -179,7 +179,6 @@ const Main4 = styled.div`
   align-items: center;
   width: 1920px;
   height: 1080px;
-  background-color: black;
 `;
 const MainPage = () => {
   const navigate = useNavigate();
@@ -190,7 +189,11 @@ const MainPage = () => {
           <Center>
             <Title>
               <Logo>
-                <img src="Image/logo.png" alt="logo" />
+                <img
+                  src="Image/logo.png"
+                  alt="logo"
+                  style={{ width: "34px", height: "34px" }}
+                />
                 <img src="Image/suit-carrier.png" alt="suit-carrier" />
               </Logo>
               <div>인기매물 확인</div>
