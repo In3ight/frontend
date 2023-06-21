@@ -4,6 +4,11 @@ import { useNavigate } from "react-router-dom";
 import Bottom from "../Components/bottom";
 import Cards from "../Components/cards";
 
+import DatePicker from "react-datepicker";
+import { ko } from "date-fns/esm/locale";
+import "react-datepicker/dist/react-datepicker.css";
+import { useState } from "react";
+
 const Div = styled.div`
   display: flex;
   justify-content: center;
@@ -96,7 +101,7 @@ const Box = styled.div`
     background-color: #007b59;
     color: white;
     border: none;
-    font-size: 16px;
+    font-size: 18px;
     margin-top: 77px;
     margin-left: 1200px;
   }
@@ -110,6 +115,17 @@ const Div3 = styled.div`
 const Div4 = styled.div`
   text-align: left;
   font-size: 24px;
+  margin-left: 5px;
+`;
+const DatePickerWrapper = styled(DatePicker)`
+  width: 315px;
+  height: 38px;
+  background-color: rgba(222, 222, 222, 0.71);
+  border: 1px solid #000000;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 30px;
+  margin-top: 5px;
 `;
 const Div5 = styled.div`
   display: flex;
@@ -244,6 +260,20 @@ const Main4 = styled.div`
 const MainPage = () => {
   const navigate = useNavigate();
 
+  const [startDate, setStartDate] = useState(null);
+  const [endDate, setEndDate] = useState(null);
+
+  const setChangeDate = (dates) => {
+    const [start, end] = dates;
+    setStartDate(start);
+    setEndDate(end);
+  };
+  const today = new Date();
+  const futureDate = new Date(
+    today.getFullYear() + 1,
+    today.getMonth(),
+    today.getDate()
+  );
   return (
     <Div>
       <Main1>
@@ -295,7 +325,19 @@ const MainPage = () => {
             </div>
             <Div4>
               대여 기간
-              <div></div>
+              <div>
+                <DatePickerWrapper
+                  selectsRange={true}
+                  locale={ko}
+                  dateFormat="yyyy년 MM월 dd일"
+                  selected={startDate}
+                  startDate={startDate}
+                  endDate={endDate}
+                  minDate={today}
+                  maxDate={futureDate}
+                  onChange={(dates) => setChangeDate(dates)}
+                />
+              </div>
             </Div4>
           </Div3>
           <Div5>
@@ -393,6 +435,7 @@ const MainPage = () => {
                   color: "white",
                   background: "#007B59",
                   border: "1px solid #007B59",
+                  fontSize: "18px",
                 }}
               >
                 매물 확인하기
@@ -402,6 +445,7 @@ const MainPage = () => {
                   color: "#3E4659",
                   background: "white",
                   border: "1px solid #3E4659",
+                  fontSize: "18px",
                 }}
               >
                 우리집 캐리어 대여
