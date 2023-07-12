@@ -60,7 +60,7 @@ const Main1 = styled.div`
   display: flex;
   flex-direction: column;
   /* justify-content: space-between; */
-  background-image: url(${"/Image/carrier.png"});
+  background-image: url(${"/images/carrier.png"});
   background-repeat: no-repeat;
   background-size: cover; /* 이미지를 화면에 꽉 채우도록 설정할 수 있습니다. */
 `;
@@ -109,8 +109,8 @@ const MainPage = () => {
         <Center>
           <Title>
             <Logo>
-              <img src="Image/logo.png" alt="logo" />
-              <img src="Image/suit-carrier.png" alt="suit-carrier" />
+              <img src="images/logo.png" alt="logo" />
+              <img src="images/suit-carrier.png" alt="suit-carrier" />
             </Logo>
             <div>인기매물 확인</div>
             <div>매물 등록하기</div>
@@ -119,8 +119,8 @@ const MainPage = () => {
           <User>
             <button>Sign Up</button>
             <div>
-              <img src="Image/alarm.png" />
-              <img src="Image/user.png" />
+              <img src="images/alarm.png" />
+              <img src="images/user.png" />
             </div>
           </User>
         </Center>
@@ -137,7 +137,7 @@ const MainPage = () => {
             <Row1>
               <div>
                 <div>
-                  <img src="Image/place.png" />
+                  <img src="images/place.png" />
                   <h3>동네 선택</h3>
                 </div>
                 <select>
