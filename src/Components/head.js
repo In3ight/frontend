@@ -54,11 +54,11 @@ const Head = () => {
           <Title>
             <Logo>
               <img
-                src="Image/logo.png"
+                src="images/logo.png"
                 alt="logo"
                 style={{ width: "34px", height: "34px" }}
               />
-              <img src="Image/suit-carrier.png" alt="suit-carrier" />
+              <img src="images/suit-carrier.png" alt="suit-carrier" />
             </Logo>
             <div>인기매물 확인</div>
             <div>매물 등록하기</div>
@@ -67,8 +67,8 @@ const Head = () => {
           <User>
             <button onClick={() => navigate("/login")}>Sign Up</button>
             <div>
-              <img src="Image/bell.png" />
-              <img src="Image/user.png" />
+              <img src="images/bell.png" />
+              <img src="images/user.png" />
             </div>
           </User>
         </Center>

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 const Profile = () => {
   const [user_id, setUserId] = useState();
   const [nickName, setNickName] = useState();
-  const [profileImage, setProfileImage] = useState();
+  const [profileimages, setProfileimages] = useState();
   const getProfile = async () => {
     try {
       // Kakao SDK API를 이용해 사용자 정보 획득
@@ -12,7 +12,7 @@ const Profile = () => {
       // 사용자 정보 변수에 저장
       setUserId(data.id);
       setNickName(data.properties.nickname);
-      setProfileImage(data.properties.profile_image);
+      setProfileimages(data.properties.profile_image);
     } catch (err) {
       console.log(err);
     }
@@ -24,7 +24,7 @@ const Profile = () => {
     <div>
       <h2>{user_id}</h2>
       <h2>{nickName}</h2>
-      <img src={profileImage}></img>
+      <img src={profileimages}></img>
     </div>
   );
 };
