@@ -114,7 +114,7 @@ const Bottom = () => {
             </div>
             <div>
               <Dis>
-                <IMG src="/Image/c_logo.png" alt="logo" />
+                <IMG src="/images/c_logo.png" alt="logo" />
                 SUIT-
                 <br />
                 CARRIER
@@ -153,7 +153,7 @@ const Bottom = () => {
             <h2>SUIT-CARRIER</h2>
             우리 집 창고 속 캐리어를, 우리 동네 캐리어로 !
           </div>
-          <img src="Image/logo.png" alt="로고" />
+          <img src="images/logo.png" alt="로고" />
         </Div6>
       </Bottom2>
     </div>

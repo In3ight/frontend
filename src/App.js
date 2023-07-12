@@ -2,17 +2,19 @@ import './App.css';
 import React, {useEffect, useState} from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import axios from 'axios';
-import SelfAuth from "./Page/SignUp/SelfAuth";
-import InputInfo from "./Page/SignUp/InputInfo";
-import MemberAgree from "./Page/SignUp/MemberAgree";
-import MemberSuccess from "./Page/SignUp/MemberSuccess";
+import SelfAuth from "./pages/SignUp/SelfAuth";
+import InputInfo from "./pages/SignUp/InputInfo";
+import MemberAgree from "./pages/SignUp/MemberAgree";
+import MemberSuccess from "./pages/SignUp/MemberSuccess";
 
-import LoginPage from "./Page/LoginPage";
-import KakaoLogin from "./Page/KaKaoLogin";
-import Auth from "./Page/Auth";
-import Profile from "./Page/Profile";
-import FindPw from "./Page/FindPw";
-import MainPage from "./Page/MainPage";
+import LoginPage from "./pages/LoginPage";
+import KakaoLogin from "./pages/KaKaoLogin";
+import Auth from "./pages/Auth";
+import Profile from "./pages/Profile";
+import FindPw from "./pages/FindPw";
+import MainPage from "./pages/MainPage";
+
+import Footer from "./components/footer";
 
 
 function App() {
@@ -29,6 +31,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<MainPage />}></Route>
+        {/* <Route path="/" element={<Footer />}></Route> */}
         <Route path="/oauth/kakao/callback" element={<Auth />}></Route>
         <Route path="/profile" element={<Profile />}></Route>
         <Route path="/findPw" element={<FindPw />}></Route>

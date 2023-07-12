@@ -116,11 +116,11 @@ const FindPw = () => {
             <input placeholder="아이디를 입력해주세요"></input>
             <Div1>
               <Div2>
-                <img src="Image/phone.png" alt="phone" />
+                <img src="images/phone.png" alt="phone" />
                 <button>휴대전화 인증</button>
               </Div2>
               <Div2>
-                <img src="Image/email.png" alt="phone" />
+                <img src="images/email.png" alt="phone" />
                 <button>이메일 인증</button>
               </Div2>
             </Div1>

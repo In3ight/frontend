@@ -14,7 +14,7 @@ import {
           component="img"
           height="215"
           width="307px"
-          image="/Image/example.png"
+          image="/images/example.png"
           alt="사진"
         />
         <div style={{ display: "flex", flexDirection: "column" }}>

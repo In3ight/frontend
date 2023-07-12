@@ -1,14 +1,15 @@
 import styled from "styled-components";
 import { AiOutlineRight } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
-import Bottom from "../Components/bottom";
-import Cards from "../Components/cards";
+import Bottom from "../components/bottom";
+import Cards from "../components/cards";
 
 // import DatePicker from "react-datepicker";
 import { ko } from "date-fns/esm/locale";
 // import "react-datepicker/dist/react-datepicker.css";
 import { useState } from "react";
-import Head from "../Components/head";
+import Head from "../components/head";
+import Footer from "../components/footer";
 
 const Div = styled.div`
   display: flex;
@@ -21,7 +22,7 @@ const Main1 = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url(/Image/carrier.png);
+  background-image: url(/images/carrier.png);
   background-repeat: no-repeat;
   background-position: top center;
   background-size: cover;
@@ -153,7 +154,7 @@ const Dis = styled.div`
 const Con = styled.div`
   & > div {
     position: relative;
-    background-image: url(/Image/circle.png);
+    background-image: url(/images/circle.png);
     background-repeat: no-repeat;
     background-position: top center;
     background-size: cover;
@@ -245,7 +246,7 @@ const MainPage = () => {
           <Div3>
             <div style={{ display: "flex" }}>
               <img
-                src="Image/place.png"
+                src="images/place.png"
                 style={{ width: "32px", height: "32px" }}
               />
               <Div4>
@@ -326,7 +327,7 @@ const MainPage = () => {
           <div>
             <Ti>
               <Div1>
-                <img src="Image/bell.png" />
+                <img src="images/bell.png" />
                 <div>공지사항</div>
                 <div>|</div>
               </Div1>
@@ -340,25 +341,25 @@ const MainPage = () => {
             <Dis>
               <Con>
                 <div>
-                  <InnerImg src="Image/calculator.png" />
+                  <InnerImg src="images/calculator.png" />
                 </div>
                 캐리어 대여하기
               </Con>
               <Con>
                 <div>
-                  <InnerImg src="Image/card.png" />
+                  <InnerImg src="images/card.png" />
                 </div>
                 캐리어 빌려주기
               </Con>
               <Con>
                 <div>
-                  <InnerImg src="Image/alarm.png" />
+                  <InnerImg src="images/alarm.png" />
                 </div>
                 거래 규칙 살펴보기
               </Con>
               <Con>
                 <div>
-                  <InnerImg src="Image/gift.png" />
+                  <InnerImg src="images/gift.png" />
                 </div>
                 서비스 둘러보기
               </Con>
@@ -450,6 +451,7 @@ const MainPage = () => {
       </Main3>
       <Main4>
         <Bottom />
+        <Footer />
       </Main4>
     </Div>
   );
