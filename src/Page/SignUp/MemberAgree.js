@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import Button from '@mui/material/Button';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
+import Button from "@mui/material/Button";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Checkbox from "@mui/material/Checkbox";
 import { useState } from "react";
 import AgreeTerms from "./AgreeTerms";
 
@@ -25,41 +25,41 @@ const Title1 = styled.div`
 
   font-size: 42px;
   font-weight: semiBold;
-  color: #4F4747;
+  color: #4f4747;
 `;
 
 //네비게이션 바
 const NavDiv = styled(Div)`
-   height: 65px;
-    margin-top: 31px;
+  height: 65px;
+  margin-top: 31px;
 `;
 
 const Hr = styled.div`
-    width: 72px;
-    border-top: 3px solid #F2F2F2;
-    margin-top: 23px;
+  width: 72px;
+  border-top: 3px solid #f2f2f2;
+  margin-top: 23px;
 `;
 
 const Hrmid = styled(Hr)`
-    width: 222px;
-    border-top: 3px solid #F2F2F2;
-    margin-top: 23px;
+  width: 222px;
+  border-top: 3px solid #f2f2f2;
+  margin-top: 23px;
 `;
 
-const ActiveCircle=styled.div`
-    border-radius: 50px;
-    height: 51px;
-    width: 51px;
-    background-color: #007B59;
-    justify-content: column;
+const ActiveCircle = styled.div`
+  border-radius: 50px;
+  height: 51px;
+  width: 51px;
+  background-color: #007b59;
+  justify-content: column;
 `;
 
-const Circle=styled(ActiveCircle)`
-    border-radius: 50px;
-    height: 38px;
-    width: 38px;
-    margin-top: 5px;
-    background-color: #F2F2F2;
+const Circle = styled(ActiveCircle)`
+  border-radius: 50px;
+  height: 38px;
+  width: 38px;
+  margin-top: 5px;
+  background-color: #f2f2f2;
 `;
 
 const SubDiv = styled(Div)`
@@ -68,33 +68,32 @@ const SubDiv = styled(Div)`
 `;
 
 const SubText = styled.div`
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    color: #B5B5B5;
-    font-size: 20px;
-    font-weight: regular;
+  color: #b5b5b5;
+  font-size: 20px;
+  font-weight: regular;
 `;
 
 const ActivesubText = styled(SubText)`
-    width: 80px;
-    height: 35px;
+  width: 80px;
+  height: 35px;
 
-    color: #007B59;
-    font-size: 20px;
-    font-weight: regular;
+  color: #007b59;
+  font-size: 20px;
+  font-weight: regular;
 `;
 
 // 주의 문구
 const Title2 = styled.div`
   width: 100%;
   display: flex;
-  justify-content: space-around; 
+  justify-content: space-around;
   flex-direction: column;
   align-items: center;
   height: 68px;
   margin-top: 41px;
-}
 
   & > div {
     display: flex;
@@ -103,8 +102,8 @@ const Title2 = styled.div`
 
     font-weight: regular;
     font-size: 24px;
-    color: #1D1D1D;
-    }
+    color: #1d1d1d;
+  }
 `;
 
 const Box = styled.div`
@@ -125,7 +124,6 @@ const Content = styled.div`
   flex-direction: column;
   //align-items: center;
   align-items: flex-start;
-  }
 `;
 
 const SubTitle = styled.div`
@@ -134,7 +132,7 @@ const SubTitle = styled.div`
   display: flex;
   justify-content: space-between;
 
-  color: #4F4747;
+  color: #4f4747;
   font-size: 16px;
   font-weight: bold;
 `;
@@ -147,7 +145,7 @@ const Div1 = styled.div`
   line-height: 140%;
   font-weight: medium;
   font-size: 13px;
-  font-color: #1D1D1D;
+  color: #1d1d1d;
 `;
 
 const Div2 = styled(Div)`
@@ -157,26 +155,25 @@ const Div2 = styled(Div)`
   margin-left: 490px;
 
   & > button {
-    width: 116px; 
+    width: 116px;
     height: 58px;
     border-radius: 30px;
     border: none;
-    background-color: #E1E1E1;
+    background-color: #e1e1e1;
     //background-color: $(props=>props.bg);
-   // background-color: { Next==true ? ${(props)=> props.bg='#007B59'} : ${(props)=>props.bg='#1D1D1D'}};
-    
+    // background-color: { Next==true ? ${(props) =>
+      (props.bg = "#007B59")} : ${(props) => (props.bg = "#1D1D1D")}};
+
     font-weight: Bold;
-    font-size: 23px; 
+    font-size: 23px;
     color: white;
-    
   }
 `;
 
 const MemberAgree = (props) => {
-
   // 체크되었을 때(=true)일 때 Next를 true로 바꿔라(=bg color=녹색)
 
-  const [Next,setNext]=useState(false);
+  const [Next, setNext] = useState(false);
   const [checked, setChecked] = useState(false);
 
   // const handleChange = (event) => {()=>
@@ -184,60 +181,63 @@ const MemberAgree = (props) => {
   // };
 
   return (
-
     <Div>
       <Center>
         <Title1>회원가입</Title1>
 
         <NavDiv>
-            <Circle></Circle>
-            <Hr/>
-            <Circle></Circle>
-            <Hrmid/>
-            <ActiveCircle></ActiveCircle>
-            <Hr/>
-            <Circle></Circle>
+          <Circle></Circle>
+          <Hr />
+          <Circle></Circle>
+          <Hrmid />
+          <ActiveCircle></ActiveCircle>
+          <Hr />
+          <Circle></Circle>
         </NavDiv>
 
         <SubDiv>
-            <SubText>본인인증</SubText>
-            <SubText style={{marginLeft:'40px',marginRight:'111px'}}>정보입력</SubText>
-            <ActivesubText style={{marginLeft:'80px'}}>약관동의</ActivesubText>
-            <SubText style={{marginLeft:'40px'}}>가입완료</SubText>
+          <SubText>본인인증</SubText>
+          <SubText style={{ marginLeft: "40px", marginRight: "111px" }}>
+            정보입력
+          </SubText>
+          <ActivesubText style={{ marginLeft: "80px" }}>약관동의</ActivesubText>
+          <SubText style={{ marginLeft: "40px" }}>가입완료</SubText>
         </SubDiv>
 
         <Title2>
-          <div style={{fontSize:'24px'}}>실제와 일치하는 정보를 입력하셔야 회원가입이 완료됩니다.</div>
-          <div style={{fontSize:'20px', color:'#939393'}}>*입력하신 정보는 회원가입 여부에만 사용되며 저장되지 않습니다.</div>
+          <div style={{ fontSize: "24px" }}>
+            실제와 일치하는 정보를 입력하셔야 회원가입이 완료됩니다.
+          </div>
+          <div style={{ fontSize: "20px", color: "#939393" }}>
+            *입력하신 정보는 회원가입 여부에만 사용되며 저장되지 않습니다.
+          </div>
         </Title2>
 
         {/* 체크되었을 때(=true)일 때 Next를 true로 바꿔라(=bg color=녹색) */}
 
         <Box>
           <Content>
-            <SubTitle> 
+            <SubTitle>
               <FormControlLabel
                 value="start"
-                control={<Checkbox color= "success"/>}
+                control={<Checkbox color="success" />}
                 label="약관동의하기"
                 labelPlacement="start"
                 // onChange={handleChange}
-                />
-              </SubTitle>
+              />
+            </SubTitle>
 
-            <Div1>{AgreeTerms}</Div1>    
-              
+            <Div1>{AgreeTerms}</Div1>
           </Content>
         </Box>
         {/* { checked==true ? setNext(true) : setNext(false)} */}
         {/* { Next==true ? props.bg='#007B59' :  props.bg='#1D1D1D'} */}
         <Div2>
           <button variant="contained" bg="#1D1D1D">
-          {/* // style={{width:'116px', height:'58px', marginTop:'12px', marginLeft:'490px', background: 'blue',fontweight:'Bold', fontSize:'23px', borderRadius:'30px'}} disabled */}
-            다음단계</button>
+            {/* // style={{width:'116px', height:'58px', marginTop:'12px', marginLeft:'490px', background: 'blue',fontweight:'Bold', fontSize:'23px', borderRadius:'30px'}} disabled */}
+            다음단계
+          </button>
         </Div2>
-
-
       </Center>
     </Div>
   );
