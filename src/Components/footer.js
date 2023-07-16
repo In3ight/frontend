@@ -12,7 +12,7 @@ const Footer = () => {
                 <Box
                     sx={{
                         width: 1920,
-                        height: 830,
+                        height: 560,
                     }}
                 >
                     <Box
@@ -21,7 +21,7 @@ const Footer = () => {
                             flexDirection: 'column',
                             alignItems: 'center',
                             width: '100%',
-                            height: 500,
+                            height: 360,
                             backgroundColor: 'primary.main',
                         }}
                     >
@@ -31,7 +31,7 @@ const Footer = () => {
                                 flexDirection: 'row',
                                 alignItems: 'center',
                                 justifyContent: 'space-between',
-                                width: 1000,
+                                width: 1200,
                                 height: '100%',
                             }}
                         >
@@ -140,12 +140,11 @@ const Footer = () => {
                                 <Box
                                     sx={{
                                         marginLeft: '20px',
-                                        width: 200,
+                                        width: 150,
                                         fontSize: 30,
                                         fontWeight: 700,
                                         textAlign: 'left',
                                         color: 'white',
-                                        backgroundColor: 'primary.main',
                                     }}
                                 > 
                                     SUIT-
@@ -161,17 +160,106 @@ const Footer = () => {
                             flexDirection: 'column',
                             alignItems: 'center',
                             width: '100%',
-                            height: 330,
+                            height: 220,
                             backgroundColor: 'sub2.main',
                         }}
                     >
                         <Box
                             sx={{
-                                width: 1000,
-                                height: 330,
+                                width: 1200,
+                                height: '100%',
                                 backgroundColor: 'sub2.main',
                             }}
                         >
+                            <Box
+                            sx={{
+                                display: 'flex',
+                                flexDirection: 'row',
+                                alignItems: 'center',
+                                justifyContent: 'space-between',
+                                width: 1200,
+                                height: '100%',
+                            }}
+                            >
+                                <Box
+                                    sx={{
+                                        marginRight: '30px',
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        alignItems: 'left',
+                                        justifyContent: 'center',
+                                        height: '100%',
+                                    }}
+                                >
+                                    <Box
+                                        sx={{
+                                            marginBottom: '20px',
+                                            fontSize: 28,
+                                            fontWeight: 600,
+                                            color: 'black',
+                                            textAlign: 'left',
+                                        }}
+                                    >
+                                        Contact US
+                                    </Box>
+                                    <Box
+                                        sx={{
+                                            marginBottom: '20px',
+                                            fontSize: 20,
+                                            color: 'black',
+                                            textAlign: 'left',
+                                        }}
+                                    >
+                                        E-mail | <a href="mailto:test@suitcarrier.co.kr">📧 test@suitcarrier.co.kr</a>
+                                    </Box>
+                                </Box>    
+                                <Box
+                                    sx={{
+                                        display: 'flex',
+                                        flexDirection: 'row',
+                                        alignItems: 'center',
+                                        justifyContent: 'space-between',
+                                    }}
+                                >
+                                    <Box
+                                        sx={{
+                                            marginTop: '70px',
+                                            marginRight: '20px',
+                                            display: 'flex',
+                                            flexDirection: 'column',
+                                            height: '100%',
+                                        }}
+                                    >
+                                        <Box
+                                            sx={{
+                                                fontSize: 18,
+                                                fontWeight: 700,
+                                                textAlign: 'right',
+                                                color: 'black',
+                                            }}
+                                        > 
+                                            SUIT-CARRIER
+                                        </Box>
+                                        <Box
+                                            sx={{
+                                                marginTop: '4px',
+                                                fontSize: 16,
+                                                fontWeight: 500,
+                                                textAlign: 'right',
+                                                color: 'black',
+                                            }}
+                                        > 
+                                            우리 집 창고 속 캐리어를, 우리 동네 캐리어로!
+                                        </Box>
+                                    </Box>
+                                    <Box
+                                        sx={{
+                                        }}
+                                    >
+                                        <img style={{width: 140+'px', }} src="images/logo.png" alt="로고" />
+                                    </Box>
+                                </Box>
+                            </Box>
                         </Box>
                     </Box>
                 </Box>
