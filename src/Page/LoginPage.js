@@ -238,7 +238,7 @@ const LoginPage = () => {
               <KakaBtn>
                 <a href={KAKAO_AUTH_URL}>카카오로 회원가입</a>
               </KakaBtn>
-              <SignBtn>회원가입</SignBtn>
+              <SignBtn onClick={() => navigate("/sign")}>회원가입</SignBtn>
 
               <AdverBtn>광고자리</AdverBtn>
             </Div2>
