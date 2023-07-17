@@ -22,11 +22,13 @@ const Title = styled.div`
   font-size: 18px;
   font-weight: bold;
 `;
-const Logo = styled.div`
+const Logo = styled.button`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 210px;
+  width: 220px;
+  border: none;
+  background-color: white;
 `;
 const User = styled.div`
   display: flex;
@@ -52,7 +54,7 @@ const Head = () => {
       <Heads>
         <Center>
           <Title>
-            <Logo>
+            <Logo onClick={() => navigate("/")}>
               <img
                 src="Image/logo.png"
                 alt="logo"

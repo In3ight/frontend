@@ -8,7 +8,12 @@ import AgreeTerms from "./SignUp/AgreeTerms";
 import { useState } from "react";
 import MemberAgree from "./SignUp/MemberAgree";
 import { useNavigate } from "react-router";
+import Head from "../Components/head";
+import Bottom from "../Components/bottom";
 
+const Main = styled.div`
+  height: 1080px;
+`;
 const Div = styled.div`
   display: flex;
   justify-content: center;
@@ -388,162 +393,170 @@ const Sign = () => {
     setNum(num - 1);
   };
   return (
-    <Div>
-      <Center>
-        <Title1>회원가입</Title1>
+    <div>
+      <Main>
+        <Head />
+        <Div>
+          <Center>
+            <Title1>회원가입</Title1>
 
-        <NavDiv>
-          {num == 0 ? <ActiveCircle></ActiveCircle> : <Circle></Circle>}
-          <Hr />
-          {num == 1 ? <ActiveCircle></ActiveCircle> : <Circle></Circle>}
-          <Hrmid />
-          {num == 2 ? <ActiveCircle></ActiveCircle> : <Circle></Circle>}
-          <Hr />
-          {num == 3 ? <ActiveCircle></ActiveCircle> : <Circle></Circle>}
-        </NavDiv>
-        <SubDiv>
-          {num == 0 ? (
-            <ActivesubText>본인인증</ActivesubText>
-          ) : (
-            <SubText>본인인증</SubText>
-          )}
-          {num == 1 ? (
-            <ActivesubText style={{ marginLeft: "40px", marginRight: "111px" }}>
-              정보입력
-            </ActivesubText>
-          ) : (
-            <SubText style={{ marginLeft: "40px", marginRight: "111px" }}>
-              정보입력
-            </SubText>
-          )}
-          {num == 2 ? (
-            <ActivesubText style={{ marginLeft: "80px" }}>
-              약관동의
-            </ActivesubText>
-          ) : (
-            <SubText style={{ marginLeft: "80px" }}>약관동의</SubText>
-          )}
-          {num == 3 ? (
-            <ActivesubText style={{ marginLeft: "40px" }}>
-              가입완료
-            </ActivesubText>
-          ) : (
-            <SubText style={{ marginLeft: "40px" }}>가입완료</SubText>
-          )}
-        </SubDiv>
+            <NavDiv>
+              {num == 0 ? <ActiveCircle></ActiveCircle> : <Circle></Circle>}
+              <Hr />
+              {num == 1 ? <ActiveCircle></ActiveCircle> : <Circle></Circle>}
+              <Hrmid />
+              {num == 2 ? <ActiveCircle></ActiveCircle> : <Circle></Circle>}
+              <Hr />
+              {num == 3 ? <ActiveCircle></ActiveCircle> : <Circle></Circle>}
+            </NavDiv>
+            <SubDiv>
+              {num == 0 ? (
+                <ActivesubText>본인인증</ActivesubText>
+              ) : (
+                <SubText>본인인증</SubText>
+              )}
+              {num == 1 ? (
+                <ActivesubText
+                  style={{ marginLeft: "40px", marginRight: "111px" }}
+                >
+                  정보입력
+                </ActivesubText>
+              ) : (
+                <SubText style={{ marginLeft: "40px", marginRight: "111px" }}>
+                  정보입력
+                </SubText>
+              )}
+              {num == 2 ? (
+                <ActivesubText style={{ marginLeft: "80px" }}>
+                  약관동의
+                </ActivesubText>
+              ) : (
+                <SubText style={{ marginLeft: "80px" }}>약관동의</SubText>
+              )}
+              {num == 3 ? (
+                <ActivesubText style={{ marginLeft: "40px" }}>
+                  가입완료
+                </ActivesubText>
+              ) : (
+                <SubText style={{ marginLeft: "40px" }}>가입완료</SubText>
+              )}
+            </SubDiv>
 
-        <Title2>
-          <div style={{ fontSize: "24px" }}>
-            실제와 일치하는 정보를 입력하셔야 회원가입이 완료됩니다.
-          </div>
-          <div style={{ fontSize: "20px", color: "#939393" }}>
-            *입력하신 정보는 회원가입 여부에만 사용되며 저장되지 않습니다.
-          </div>
-        </Title2>
-        {num == 0 && (
-          <div>
-            <Box>
-              <Content>
-                <Div1>
-                  <p>성명</p>
-                  <input placeholder="이름"></input>
-                </Div1>
-                <Div2>
-                  <p>법적생년월일</p>
-                  <input placeholder="nnnn-nn-nn"></input>
-                </Div2>
-                <Div3>
-                  <p>본인인증하러가기</p>
-                  <Button
-                    variant="contained"
-                    style={{
-                      width: "96px",
-                      height: "37px",
-                      backgroundColor: "#007B59",
-                    }}
-                    onClick={() => navigate("/phone")}
-                  >
-                    본인인증
-                  </Button>
-                </Div3>
-              </Content>
-            </Box>
-            <Btn>
-              <button onClick={addNum}>다음단계</button>
-            </Btn>
-          </div>
-        )}
-        {num == 1 && (
-          <div>
-            <Box>
-              <Content>
-                <Div4>
-                  <p>아이디</p>
-                  <input
-                    _onchange={(e) => {
-                      setUseremail(e.target.value);
-                      emailChk(e.target.value);
-                    }}
-                    placeholder="이메일"
-                    type="email"
-                  ></input>
-                </Div4>
-                <Div5>
-                  <p>비밀번호</p>
-                  <input
-                    _onchange={(e) => {
-                      setUserpw(e.target.value);
-                      pwChk(e.target.value);
-                    }}
-                    placeholder="영문 대소문자, 숫자를 혼합해 8자 이상 입력"
-                    type="password"
-                  ></input>
-                </Div5>
-                <Div6>
-                  <p>거주지역</p>
-                  <input placeholder="드롭다운"></input>
-                </Div6>
-              </Content>
-            </Box>
-            <Btn>
-              <button onClick={minusNum}>이전단계</button>
-              <button onClick={addNum}>다음단계</button>
-            </Btn>
-          </div>
-        )}
-        {num == 2 && (
-          <div>
-            <Box1>
-              <Content>
-                <SubTitle>
-                  <FormControlLabel
-                    value="start"
-                    control={<Checkbox color="success" />}
-                    label="약관동의하기"
-                    labelPlacement="start"
-                    // onChange={handleChange}
-                  />
-                </SubTitle>
+            <Title2>
+              <div style={{ fontSize: "24px" }}>
+                실제와 일치하는 정보를 입력하셔야 회원가입이 완료됩니다.
+              </div>
+              <div style={{ fontSize: "20px", color: "#939393" }}>
+                *입력하신 정보는 회원가입 여부에만 사용되며 저장되지 않습니다.
+              </div>
+            </Title2>
+            {num == 0 && (
+              <div>
+                <Box>
+                  <Content>
+                    <Div1>
+                      <p>성명</p>
+                      <input placeholder="이름"></input>
+                    </Div1>
+                    <Div2>
+                      <p>법적생년월일</p>
+                      <input placeholder="nnnn-nn-nn"></input>
+                    </Div2>
+                    <Div3>
+                      <p>본인인증하러가기</p>
+                      <Button
+                        variant="contained"
+                        style={{
+                          width: "96px",
+                          height: "37px",
+                          backgroundColor: "#007B59",
+                        }}
+                        onClick={() => navigate("/phone")}
+                      >
+                        본인인증
+                      </Button>
+                    </Div3>
+                  </Content>
+                </Box>
+                <Btn>
+                  <button onClick={addNum}>다음단계</button>
+                </Btn>
+              </div>
+            )}
+            {num == 1 && (
+              <div>
+                <Box>
+                  <Content>
+                    <Div4>
+                      <p>아이디</p>
+                      <input
+                        _onchange={(e) => {
+                          setUseremail(e.target.value);
+                          emailChk(e.target.value);
+                        }}
+                        placeholder="이메일"
+                        type="email"
+                      ></input>
+                    </Div4>
+                    <Div5>
+                      <p>비밀번호</p>
+                      <input
+                        _onchange={(e) => {
+                          setUserpw(e.target.value);
+                          pwChk(e.target.value);
+                        }}
+                        placeholder="영문 대소문자, 숫자를 혼합해 8자 이상 입력"
+                        type="password"
+                      ></input>
+                    </Div5>
+                    <Div6>
+                      <p>거주지역</p>
+                      <input placeholder="드롭다운"></input>
+                    </Div6>
+                  </Content>
+                </Box>
+                <Btn>
+                  <button onClick={minusNum}>이전단계</button>
+                  <button onClick={addNum}>다음단계</button>
+                </Btn>
+              </div>
+            )}
+            {num == 2 && (
+              <div>
+                <Box1>
+                  <Content>
+                    <SubTitle>
+                      <FormControlLabel
+                        value="start"
+                        control={<Checkbox color="success" />}
+                        label="약관동의하기"
+                        labelPlacement="start"
+                        // onChange={handleChange}
+                      />
+                    </SubTitle>
 
-                <H1>{AgreeTerms}</H1>
+                    <H1>{AgreeTerms}</H1>
+                  </Content>
+                </Box1>
+                <Btn>
+                  <button onClick={minusNum}>이전단계</button>
+                  <button onClick={addNum}>다음단계</button>
+                </Btn>
+              </div>
+            )}
+            {num == 3 && (
+              <Content>
+                <Icon>
+                  <Success onClick={() => navigate("/")} />
+                </Icon>
+                <Div7>가입이 완료되었습니다.</Div7>
               </Content>
-            </Box1>
-            <Btn>
-              <button onClick={minusNum}>이전단계</button>
-              <button onClick={addNum}>다음단계</button>
-            </Btn>
-          </div>
-        )}
-        {num == 3 && (
-          <Content>
-            <Icon>
-              <Success onClick={() => navigate("/")} />
-            </Icon>
-            <Div7>가입이 완료되었습니다.</Div7>
-          </Content>
-        )}
-      </Center>
-    </Div>
+            )}
+          </Center>
+        </Div>
+      </Main>
+      <Bottom />
+    </div>
   );
 };
 export default Sign;

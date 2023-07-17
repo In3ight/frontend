@@ -195,7 +195,7 @@ const LoginPage = () => {
             <SubButton1>SUIT-CARRIER</SubButton1>
             <SubButton1>SUIT-CARRIER</SubButton1>
           </div>
-          <SignUpBtn>Sign Up</SignUpBtn>
+          <SignUpBtn onClick={() => navigate("/sign")}>Sign Up</SignUpBtn>
         </Div1>
       </StyledHead>
       <Main>
