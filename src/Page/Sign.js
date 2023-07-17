@@ -11,6 +11,12 @@ import { useNavigate } from "react-router";
 import Head from "../Components/head";
 import Bottom from "../Components/bottom";
 
+const Total = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
 const Main = styled.div`
   height: 1080px;
 `;
@@ -357,6 +363,13 @@ const Btn = styled.div`
     margin-right: 10px;
   }
 `;
+const Main2 = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 1920px;
+  height: 1080px;
+`;
 const Sign = () => {
   const [useremail, setUseremail] = useState("");
   const [userpw, setUserpw] = useState("");
@@ -393,7 +406,7 @@ const Sign = () => {
     setNum(num - 1);
   };
   return (
-    <div>
+    <Total>
       <Main>
         <Head />
         <Div>
@@ -555,8 +568,10 @@ const Sign = () => {
           </Center>
         </Div>
       </Main>
-      <Bottom />
-    </div>
+      <Main2>
+        <Bottom />
+      </Main2>
+    </Total>
   );
 };
 export default Sign;
