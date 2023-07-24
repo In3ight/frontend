@@ -15,6 +15,9 @@ import FindPw from "./pages/FindPw";
 import MainPage from "./pages/MainPage";
 
 import Footer from "./components/footer";
+import MyCateg from './pages/MyPage/MyCateg';
+
+
 
 
 function App() {
@@ -44,6 +47,10 @@ function App() {
         <Route path="/inputInfo" element={<InputInfo/>}></Route>
         <Route path="/memberAgree" element={<MemberAgree/>}></Route>
         <Route path="/memberSuccess" element={<MemberSuccess/>}></Route>
+
+        <Route path="/myCateg" element={<MyCateg/>}></Route>
+
+
 
       </Routes>
     </BrowserRouter>
