@@ -163,3 +163,4 @@ const MyCateg = () => {
  };
 
 export default MyCateg;
+
