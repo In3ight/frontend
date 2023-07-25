@@ -9,7 +9,7 @@ const Heads = styled.div`
   height: 70px;
 `;
 const Center = styled.div`
-  width: 1280px;
+  width: 1200px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -57,11 +57,12 @@ const Head = () => {
                 src="Image/logo.png"
                 alt="logo"
                 style={{ width: "34px", height: "34px" }}
+                onClick={() => navigate("/")}
               />
               <img src="Image/suit-carrier.png" alt="suit-carrier" />
             </Logo>
             <div>인기매물 확인</div>
-            <div>매물 등록하기</div>
+            <div onClick={() => navigate("/register")}>매물 등록하기</div>
             <div>CONTACT_US</div>
           </Title>
           <User>
