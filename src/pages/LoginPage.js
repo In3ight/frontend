@@ -1,5 +1,7 @@
+import React, { useState } from "react";
 import styled from "styled-components";
 import Auth from "./Auth";
+import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 const Div = styled.div`
   display: flex;
@@ -107,6 +109,14 @@ const ProductBtn = styled.button`
   border-radius: 50%;
   width: 59px;
   height: 59px;
+  border: solid #D9D9D9;
+  background-color : white;
+
+  > img {
+    width: auto;
+    display: block;
+    margin: auto;
+  }
 `;
 const KakaBtn = styled.button`
   width: 509px;
@@ -116,6 +126,8 @@ const KakaBtn = styled.button`
   font-size: 22px;
   color: #4f4747;
   border: none;
+  text-decoration-line: none;
+  text-color: black;
 `;
 const SignBtn = styled.button`
   width: 509px;
@@ -130,6 +142,8 @@ const AdverBtn = styled.button`
   margin-top: 63px;
   width: 506px;
   height: 243px;
+  border: none;
+  background-color: white;
 `;
 const Bottom1 = styled.footer`
   background-color: #007b59;
@@ -183,8 +197,47 @@ const LoginPage = () => {
   const REST_API_KEY = "089967149185843522d3d4b4ae9a3b3d";
   const REDIRECT_URI = "http://localhost:3000/oauth/kakao/callback";
   const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`;
+  const SERVER_URL = 'http://localhost:8080/';
 
   const navigate = useNavigate();
+
+  const pwdRegex = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,12}$/;
+  const [loginInfo, setLoginInfo] = useState({
+    email: '',
+    password: ''
+  });
+
+  const handleChange = (event) => {
+    setLoginInfo({...loginInfo, [event.target.name] : event.target.value});
+  }
+
+  const handleLogin = () => {
+    if(loginInfo.email === "") {
+      alert('이메일을 입력해주세요.');
+    } else if(!pwdRegex.test(loginInfo.password)) {
+      alert('형식에 맞게 비밀번호를 입력해주세요.');
+    } else {
+      axios.post(SERVER_URL + 'auth/login',
+      {
+        email: loginInfo.email,
+        password: loginInfo.password
+      }
+      )
+      .then(response => {
+        if (response.ok) {
+          alert('반갑습니다!');
+          navigate("/");
+        } else {
+          alert('존재하지 않는 회원정보이거나 아이디/비밀번호가 틀렸습니다.');
+        }
+      })
+      .catch(err => console.error(err))
+    }
+  }
+
+  const handleSignUp = () => {
+    navigate("/selfAuth");
+  }
 
   return (
     <Div>
@@ -201,12 +254,16 @@ const LoginPage = () => {
       <Main>
         <Box>
           <h3>로그인</h3>
-          <input className="Input" placeholder="이메일"></input>
+          <input className="Input" placeholder="이메일" name="email" value={loginInfo.email} onChange={handleChange}></input>
           <input
+            type="password"
             className="Input"
             placeholder="비밀번호 영문, 특수문자, 숫자혼합 8~12자"
+            name="password"
+            value={loginInfo.password}
+            onChange={handleChange}
           ></input>
-          <LoginBtn>로그인</LoginBtn>
+          <LoginBtn onClick={handleLogin}>로그인</LoginBtn>
           <div>
             <Div2>
               <div>
@@ -223,24 +280,24 @@ const LoginPage = () => {
               </div>
               <div>
                 <div>
-                  <ProductBtn>카카오톡 사진</ProductBtn>카카오톡
+                  <ProductBtn><img src="images/kakao.png" height="60%"/></ProductBtn>카카오톡
                 </div>
                 <div>
-                  <ProductBtn>네이버 사진</ProductBtn>네이버
+                  <ProductBtn><img src="images/naver.png" height="50%"/></ProductBtn>네이버
                 </div>
                 <div>
-                  <ProductBtn>네이버 사진</ProductBtn>네이버
+                  <ProductBtn><img src="images/facebook.png" height="60%"/></ProductBtn>페이스북
                 </div>
                 <div>
-                  <ProductBtn>휴대폰 사진</ProductBtn>휴대폰
+                  <ProductBtn><img src="images/phone.png" height="60%"/></ProductBtn>휴대폰
                 </div>
               </div>
               <KakaBtn>
-                <a href={KAKAO_AUTH_URL}>카카오로 회원가입</a>
+                <a href={KAKAO_AUTH_URL}><img src="images/kakao_signup.png" height="100%"/></a>
               </KakaBtn>
-              <SignBtn>회원가입</SignBtn>
+              <SignBtn onClick={handleSignUp}>회원가입</SignBtn>
 
-              <AdverBtn>광고자리</AdverBtn>
+              <AdverBtn><img src="images/ad.png" width='100%'/></AdverBtn>
             </Div2>
           </div>
         </Box>
