@@ -11,7 +11,8 @@ const Footer = () => {
             <ThemeProvider theme={In3ightTheme}>
                 <Box
                     sx={{
-                        width: 1920,
+                        width: 1280,
+                        // width: 1920,
                         height: 560,
                     }}
                 >
