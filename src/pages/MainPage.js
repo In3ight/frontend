@@ -1,15 +1,15 @@
 import styled from "styled-components";
 import { AiOutlineRight } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
-import Bottom from "../components/bottom";
-import Cards from "../components/cards";
+import Bottom from "../Components/bottom";
+import Cards from "../Components/cards";
 
 // import DatePicker from "react-datepicker";
 import { ko } from "date-fns/esm/locale";
 // import "react-datepicker/dist/react-datepicker.css";
 import { useState } from "react";
-import Head from "../components/head";
-import Footer from "../components/footer";
+import Head from "../Components/head";
+import Footer from "../Components/footer";
 
 const Div = styled.div`
   display: flex;
@@ -85,6 +85,7 @@ const Div4 = styled.div`
 //   border-radius: 30px;
 //   margin-top: 5px;
 // `;
+
 const Div5 = styled.div`
   display: flex;
   font-size: 24px;

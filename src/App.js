@@ -14,7 +14,9 @@ import Profile from "./pages/Profile";
 import FindPw from "./pages/FindPw";
 import MainPage from "./pages/MainPage";
 
-import Footer from "./components/footer";
+import SelectDetail from "./pages/SelectDetail";
+
+import Footer from "./Components/footer";
 
 
 function App() {
@@ -31,6 +33,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<MainPage />}></Route>
+        <Route path="/selectDetail" element={<SelectDetail />}></Route>
+
         {/* <Route path="/" element={<Footer />}></Route> */}
         <Route path="/oauth/kakao/callback" element={<Auth />}></Route>
         <Route path="/profile" element={<Profile />}></Route>
